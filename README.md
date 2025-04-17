@@ -41,4 +41,4 @@ Coming soon — depends on your setup. Add instructions for:
 
 ## Acknowledgements
 
-> Baseline modeling references and data templates provided by course instructors and senior cohorts. Modified and extended by our team for educational use.
+> Baseline modeling references and data templates provided by the professor and senior cohorts. Modified and extended by our team for educational use.
