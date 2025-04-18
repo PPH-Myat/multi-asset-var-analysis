@@ -77,3 +77,4 @@ Historical VaR (Sensitivity-Based): $X,XXX,XXX.XX
 ## Acknowledgements
 
 > Baseline modeling references and data templates provided by the professor and senior cohorts. Modified and extended by our team for educational use.
+
