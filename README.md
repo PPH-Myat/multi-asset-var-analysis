@@ -17,6 +17,30 @@ This project calculates the 1-day 95% Value-at-Risk (VaR) of a mixed asset portf
 - 10Y Payer SOFR Swap ($100M notional, 4.2% strike)
 - Equity: $1M each in AAPL, MSFT, Ford, and Bank of America
 
+## Project Workflow
+
+1. **Preprocess the Market Data**
+   - Compute daily returns for equities and daily changes for SOFR zero rates.
+   - Merge into a unified dataset of 34 risk factors.
+   - Interpolate missing data points linearly.
+
+2. **Swap Pricing & Sensitivity**
+   - Calculate present value of the 10Y payer SOFR swap.
+   - Estimate the PV01 vector (rate sensitivities) using bump-and-reprice.
+
+3. **Value-at-Risk Modeling**
+   - Compute Parametric VaR based on portfolio variance and expected return.
+   - Run Monte Carlo simulations:
+     - Full revaluation: simulate future returns using a multivariate normal distribution; reprice the swap under each simulated scenario.
+     - Sensitivity-based: estimate swap PnL using the dot product of PV01 and rate shocks.
+   - Apply Historical VaR using actual past risk factor changes:
+     - Full revaluation: shift the SOFR curve by historical deltas and reprice the swap.
+     - Sensitivity-based: approximate PnL using PV01 × historical changes in zero rates.
+
+4. **Compare Results**
+   - Print all 1-day 95% VaR results across all models.
+   - Evaluate consistency, model assumptions, and sensitivity of outcomes.
+
 ## Data Used
 
 - 1 year of historical SOFR curve data
