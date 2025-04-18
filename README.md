@@ -1,5 +1,6 @@
 # multi-asset-var-analysis
- Quantitative analysis of 1-day 95% Value-at-Risk (VaR) for a multi-asset portfolio using parametric, historical, and Monte Carlo simulation methods. Assets include a SOFR interest rate swap and equity positions in AAPL, MSFT, Ford, and Bank of America.
+
+Quantitative analysis of 1-day 95% Value-at-Risk (VaR) for a multi-asset portfolio using parametric, historical, and Monte Carlo simulation methods. Assets include a SOFR interest rate swap and equity positions in AAPL, MSFT, Ford, and Bank of America.
 
 ---
 
@@ -30,14 +31,54 @@ This project calculates the 1-day 95% Value-at-Risk (VaR) of a mixed asset portf
 
 ## How to Run
 
-Coming soon — depends on your setup. Add instructions for:
-- Notebooks
-- Dependencies (`requirements.txt`)
-- Any Excel files or macros if applicable
+Follow these steps to set up and run the project locally:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/multi-asset-var-analysis.git
+cd multi-asset-var-analysis
+```
+### 2. Set Up Python Environment
+Make sure you have Python 3.10+ installed. Then install all required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+### 3. Prepare the Excel File
+Place the Excel file in the following path:
+
+```bash
+data/hist_data.xlsm
+```
+The file must include the following sheets:
+- `SofrCurve` — daily SOFR curve (with tenor columns and date rows)
+- `AAPL`, `MSFT`, `F`, and `BAC` — each with:
+  - `Date` column  
+  - `Adj Close` column (for adjusted closing prices)
+
+
+### 4. Run the Main Script
+From the root directory, execute:
+
+```bash
+python main.py
+```
+### 5. Output
+You will see results printed in the terminal like this:
+
+```bash
+----- 1-Day 95% Value at Risk (VaR) Summary -----
+Parametric VaR: $X,XXX,XXX.XX
+Monte Carlo VaR (Full Revaluation): $X,XXX,XXX.XX
+Monte Carlo VaR (Sensitivity-Based): $X,XXX,XXX.XX
+Historical VaR (Full Revaluation): $X,XXX,XXX.XX
+Historical VaR (Sensitivity-Based): $X,XXX,XXX.XX
+```
 
 ## Academic Context
 
-> This project was submitted as part of the QF609 (AY2024-2025) group assignment at Singapore Managment University.
+> This project was submitted as part of the QF609 (AY2024-2025) group assignment at Singapore Management University.
 
 ## Acknowledgements
 
