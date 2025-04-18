@@ -1,9 +1,3 @@
-# multi-asset-var-analysis
-
-Quantitative analysis of 1-day 95% Value-at-Risk (VaR) for a multi-asset portfolio using parametric, historical, and Monte Carlo simulation methods. Assets include a SOFR interest rate swap and equity positions in AAPL, MSFT, Ford, and Bank of America.
-
----
-
 # Quantitative Risk Modeling: Portfolio VaR Estimation
 
 This project calculates the 1-day 95% Value-at-Risk (VaR) of a mixed asset portfolio containing a SOFR swap and equity positions (AAPL, MSFT, F, BAC), using three major VaR methodologies:
