@@ -30,7 +30,7 @@ Follow these steps to set up and run the project locally:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/multi-asset-var-analysis.git
+git clone https://github.com/PPH-Myat/multi-asset-var-analysis.git
 cd multi-asset-var-analysis
 ```
 ### 2. Set Up Python Environment
